@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthcare System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🏥 Smart Healthcare System</h1>
+
+    {% if message %}
+    <p class="success">{{ message }}</p>
+    {% endif %}
+
+    <div class="card">
+        <h2>Patient Registration</h2>
+
+        <form action="/register" method="POST">
+            <input type="text" name="name" placeholder="Patient Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="disease" placeholder="Disease" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Book Appointment</h2>
+
+        <form action="/appointment" method="POST">
+            <input type="text" name="patient" placeholder="Patient Name" required>
+            <input type="text" name="doctor" placeholder="Doctor Name" required>
+            <input type="date" name="date" required>
+            <button type="submit">Book</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
