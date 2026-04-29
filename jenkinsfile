@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone') {
+            steps {
+                git 'https://github.com/soumya150704/healthcare-devsecops'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t healthcare-app .'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing Successful'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'docker run -d -p 5000:5000 healthcare-app'
+            }
+        }
+    }
+}
