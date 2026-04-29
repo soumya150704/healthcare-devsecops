@@ -6,7 +6,7 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Aryyaman/healthcare-devsecops.git'
+                url: 'https://github.com/Soumya150704/healthcare-devsecops.git'
             }
         }
 
